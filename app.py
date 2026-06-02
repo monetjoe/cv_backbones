@@ -167,4 +167,4 @@ if __name__ == "__main__":
         )
         sync_btn.click(sync, inputs=subset_opt, outputs=[status_bar, dld_file])
 
-    demo.launch()
+    demo.launch(theme=gr.themes.Citrus())
