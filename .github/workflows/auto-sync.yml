@@ -95,3 +95,11 @@ jobs:
           else
             echo "Files are the same, no changes."
           fi
+      # Step 3: 更新 HF & MS dataset
+      - name: Sync HuggingFace & ModelScope dataset
+        env:
+          MS_TOKEN: ${{ secrets.MS_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          pip install modelscope
+          python ./.github/sync.py --mstk $MS_TOKEN --hftk $HF_TOKEN
