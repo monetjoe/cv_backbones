@@ -101,5 +101,5 @@ jobs:
           MS_TOKEN: ${{ secrets.MS_TOKEN }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          pip install modelscope
+          pip install modelscope beautifulsoup4
           python ./.github/sync.py --mstk $MS_TOKEN --hftk $HF_TOKEN
